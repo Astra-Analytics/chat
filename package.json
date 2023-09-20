@@ -1,7 +1,8 @@
 {
-  "name": "ai-chatbot-starter",
-  "version": "0.1.0",
-  "private": true,
+  "name": "aero-chat",
+  "version": "0.1.5",
+  "private": false,
+  "types": "./types/index.d.ts",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
