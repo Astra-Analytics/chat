@@ -34,6 +34,8 @@ import { ModelSelect } from './ModelSelect';
 import { SystemPrompt } from './SystemPrompt';
 import { TemperatureSlider } from './Temperature';
 
+import { useUser } from '@clerk/nextjs';
+
 interface Props {
   stopConversationRef: MutableRefObject<boolean>;
 }
@@ -68,6 +70,12 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
+  const { user, isLoaded } = useUser();
+  const id = user?.id ?? null;
+  if (id === null) {
+    throw new Error('UserId is null');
+  }
+
   const handleSend = useCallback(
     async (message: Message, deleteCount = 0, plugin: Plugin | null = null) => {
       if (selectedConversation) {
@@ -94,6 +102,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
         homeDispatch({ field: 'loading', value: true });
         homeDispatch({ field: 'messageIsStreaming', value: true });
         const chatBody: ChatBody = {
+          userId: id,
           model: updatedConversation.model,
           messages: updatedConversation.messages,
           key: apiKey,

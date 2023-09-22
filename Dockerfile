@@ -9,6 +9,7 @@ RUN npm ci
 
 # ---- Build ----
 FROM dependencies AS build
+ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_Y2hhcm1lZC1ncm91cGVyLTc1LmNsZXJrLmFjY291bnRzLmRldiQ
 COPY . .
 RUN npm run build
 
