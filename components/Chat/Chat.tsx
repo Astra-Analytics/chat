@@ -175,7 +175,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
               isFirst = false;
               const updatedMessages: Message[] = [
                 ...updatedConversation.messages,
-                { role: 'assistant', content: chunkValue },
+                { role: 'Aero', content: chunkValue },
               ];
               updatedConversation = {
                 ...updatedConversation,
@@ -225,7 +225,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
           const { answer } = await response.json();
           const updatedMessages: Message[] = [
             ...updatedConversation.messages,
-            { role: 'assistant', content: answer },
+            { role: 'Aero', content: answer },
           ];
           updatedConversation = {
             ...updatedConversation,

@@ -72,11 +72,11 @@ describe('cleanData Functions', () => {
           name: 'conversation 1',
           messages: [
             {
-              role: 'user',
+              role: 'Human',
               content: "what's up ?",
             },
             {
-              role: 'assistant',
+              role: 'Aero',
               content: 'Hi',
             },
           ],
@@ -92,11 +92,11 @@ describe('cleanData Functions', () => {
             name: 'conversation 1',
             messages: [
               {
-                role: 'user',
+                role: 'Human',
                 content: "what's up ?",
               },
               {
-                role: 'assistant',
+                role: 'Aero',
                 content: 'Hi',
               },
             ],
@@ -121,11 +121,11 @@ describe('cleanData Functions', () => {
             name: 'conversation 1',
             messages: [
               {
-                role: 'user',
+                role: 'Human',
                 content: "what's up ?",
               },
               {
-                role: 'assistant',
+                role: 'Aero',
                 content: 'Hi',
               },
             ],
@@ -148,11 +148,11 @@ describe('cleanData Functions', () => {
             name: 'conversation 1',
             messages: [
               {
-                role: 'user',
+                role: 'Human',
                 content: "what's up ?",
               },
               {
-                role: 'assistant',
+                role: 'Aero',
                 content: 'Hi',
               },
             ],
@@ -184,11 +184,11 @@ describe('cleanData Functions', () => {
             name: 'conversation 1',
             messages: [
               {
-                role: 'user',
+                role: 'Human',
                 content: "what's up ?",
               },
               {
-                role: 'assistant',
+                role: 'Aero',
                 content: 'Hi',
               },
             ],
@@ -227,11 +227,11 @@ describe('cleanData Functions', () => {
             name: 'conversation 1',
             messages: [
               {
-                role: 'user',
+                role: 'Human',
                 content: "what's up ?",
               },
               {
-                role: 'assistant',
+                role: 'Aero',
                 content: 'Hi',
               },
             ],
