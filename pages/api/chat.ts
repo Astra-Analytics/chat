@@ -55,7 +55,7 @@ const handler = async (req: Request): Promise<Response> => {
     for (let i = messages.length - 1; i >= 0; i--) {
       const message = messages[i];
       const tokens = encoding.encode(message.content);
-      console.log(`Message: ${message.id}, Tokens: ${tokens.length}`);
+      console.log(`Message: ${message}, Tokens: ${tokens.length}`);
 
       if (tokenCount + tokens.length + 1000 > model.tokenLimit) {
         console.log(`Token count exceeded limit for the model.`);
