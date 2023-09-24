@@ -56,7 +56,11 @@ export const ChatbarSettings = () => {
       <SidebarButton
         text={t('Dashboard')}
         icon={<IconDashboard size={18} />}
-        onClick={() => router.push('https://aero.astraanalytics.co/dashboard')}
+        onClick={() =>
+          router.push('https://aero.astraanalytics.co/dashboard', undefined, {
+            shallow: true,
+          })
+        }
       />
 
       <SidebarButton
