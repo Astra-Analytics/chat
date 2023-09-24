@@ -1,7 +1,8 @@
-import { IconFileExport, IconSettings } from '@tabler/icons-react';
+import { IconDashboard, IconSettings } from '@tabler/icons-react';
 import { useContext, useState } from 'react';
 
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 import HomeContext from '@/pages/api/home/home.context';
 
@@ -24,6 +25,7 @@ import {
 export const ChatbarSettings = () => {
   const { t } = useTranslation('sidebar');
   const [isSettingDialogOpen, setIsSettingDialog] = useState<boolean>(false);
+  const router = useRouter();
 
   const {
     state: {
@@ -49,7 +51,13 @@ export const ChatbarSettings = () => {
         <ClearConversations onClearConversations={handleClearConversations} />
       ) : null}
 
-      <Import onImport={handleImportConversations} />
+      {/* <Import onImport={handleImportConversations} /> */}
+
+      <SidebarButton
+        text={t('Dashboard')}
+        icon={<IconDashboard size={18} />}
+        onClick={() => router.push('/dashboard')}
+      />
 
       <SidebarButton
         text={t('Settings')}
