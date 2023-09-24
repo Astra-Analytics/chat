@@ -125,8 +125,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
           });
         }
         const controller = new AbortController();
-        const url = `${process.env.OPENAI_API_HOST}${endpoint}`;
-        const response = await fetch(url, {
+        const response = await fetch(endpoint, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
