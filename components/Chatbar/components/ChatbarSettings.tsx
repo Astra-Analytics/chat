@@ -57,9 +57,7 @@ export const ChatbarSettings = () => {
         text={t('Dashboard')}
         icon={<IconDashboard size={18} />}
         onClick={() =>
-          router.push('https://aero.astraanalytics.co/dashboard', undefined, {
-            shallow: true,
-          })
+          (window.location.href = 'https://aero.astraanalytics.co/dashboard')
         }
       />
 
