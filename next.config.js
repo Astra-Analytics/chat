@@ -5,6 +5,7 @@ const nextConfig = {
   i18n,
   reactStrictMode: true,
   basePath: '/chat',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/chat' : '',
 
   webpack(config, { isServer, dev }) {
     config.experiments = {
