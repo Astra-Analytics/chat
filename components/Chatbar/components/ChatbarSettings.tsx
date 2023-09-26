@@ -67,7 +67,7 @@ export const ChatbarSettings = () => {
         onClick={() => setIsSettingDialog(true)}
       />
 
-      <UserButton afterSignOutUrl="/" />
+      <UserButton afterSignOutUrl="https://aero.astraanalytics.co" />
 
       <SettingDialog
         open={isSettingDialogOpen}
