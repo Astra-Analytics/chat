@@ -1,8 +1,19 @@
-import { IconDashboard, IconSettings } from '@tabler/icons-react';
+import {
+  IconDashboard,
+  IconMoon,
+  IconSettings,
+  IconSun,
+} from '@tabler/icons-react';
 import { useContext, useState } from 'react';
 
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
+
+import { useCreateReducer } from '@/hooks/useCreateReducer';
+
+import { getSettings, saveSettings } from '@/utils/app/settings';
+
+import { Settings } from '@/types/settings';
 
 import HomeContext from '@/pages/api/home/home.context';
 
@@ -62,19 +73,31 @@ export const ChatbarSettings = () => {
       />
 
       <SidebarButton
+        text={lightMode === 'light' ? 'Dark mode' : 'Light mode'}
+        icon={
+          lightMode === 'light' ? <IconMoon size={16} /> : <IconSun size={16} />
+        }
+        onClick={() =>
+          lightMode === 'light'
+            ? homeDispatch({ field: 'lightMode', value: 'dark' })
+            : homeDispatch({ field: 'lightMode', value: 'light' })
+        }
+      />
+
+      {/* <SidebarButton
         text={t('Settings')}
         icon={<IconSettings size={18} />}
         onClick={() => setIsSettingDialog(true)}
-      />
+      /> */}
 
       <UserButton afterSignOutUrl="https://aero.astraanalytics.co" />
 
-      <SettingDialog
+      {/* <SettingDialog
         open={isSettingDialogOpen}
         onClose={() => {
           setIsSettingDialog(false);
         }}
-      />
+      /> */}
     </div>
   );
 };
