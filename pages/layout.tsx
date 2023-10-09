@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     // <html lang="en">
     <ClerkProvider>
-      <div className={`${inter.className} min-h-[100svh] flex flex-col`}>
+      <div className={`${inter.className} min-h-screen flex flex-col`}>
         <div className="flex items-center h-20 gap-4 px-4 border-b border-black border-solid sm:px-8 border-opacity-20">
           <Link
             href="/sign-in"
